@@ -521,9 +521,94 @@ function idade(idade1,idade2) { // Função idade (com valores das idades)
 } // Fecchamento da função - idade 
 
 
-*/ // FINAL DO COMENTÁRIO
-
-
 // Salvando - 09.10.2022 - Javascript   
 
-alert('Atualizando!!');
+// FizzBuzz - Mini-Projeto3
+
+//Começamos pelas regras do FizzBuzz
+
+// 1. Se o valor não é um número, retorne 'Não é um número'.
+// 2. Se número for divisível por 3 e 5, retorne FizzBuzz;
+// 3. Se número for divisível por 3, retorne Fizz;
+// 4. Se número for divisível por 5, retorne Buzz;
+// 5. Se número não for divisível por 3 ou 5 , retorne entrada.
+
+const resultado = fizzBuzz(15); // Constante (resultado) = função (fizzBuzz(entrada)
+console.log(resultado)
+
+function fizzBuzz(entrada)  { // Função FizzBuzz com valor de entrada
+    // Regra 1
+
+    if ( typeof entrada !== 'number') { // Se o tipo da variável entrada for diferente dos números, faça..
+        return 'Não é um número!!'; // Retorne a mensagem 'Não é um número!!'
+    }
+
+    // Regra 2
+    else if (entrada % 3 === 0 && entrada % 5 === 0) { // Se entrada for dividida por 3 e se resto é ígual á 0.. E também for divisível por 5 e seu resto é ígual á 0.. Faça..
+        return 'FizzBuzz';
+    }
+
+    // Regra 3
+    if (entrada % 3 === 0) { // Se entrada for dividida por 3 e seu resto é ígual á 0.. Faça..
+        return 'Fizz';
+    }
+
+    // Regra 4
+    else if (entrada % 5 === 0) { // Se entrada for dividida por 5 e seu resto é ígual á 0.. Faça..
+        return 'Buzz';
+    }
+
+    // Regra 5
+    else  return entrada; // Senão retorne entrada!!
+}
+
+
+// Medidor de Velocidade - Mini-Projeto4
+
+// Regras!!!
+
+// 1. Velocidade máxima será de até 70km/h;
+// 2. A cada 5km/h acima desse limite, ganhará 1 ponto na carteira;
+// 3. Será necessário o uso da biblioteca Math.Floor;
+// 4. Caso os pontos na carteira forem maior que 12, retorne 'Carteira Suspensa!'.
+
+velocidadeVerificada(110); // Valor de velocidade
+
+function velocidadeVerificada(velocidade) { // Função
+    if (velocidade <= 70) { // Se velocidade for menor ou ígual á 70..
+        console.log('Okay :)'); // Okayyy
+    } // Fechamento do Se
+    else {
+        const pontos = Math.floor((velocidade - 70) / 5); // Math.floor é uma biblioteca matemática do JS, que faz o arredondamento dos número!!
+        if (pontos > 12) { // Se pontos forem maior que 12
+            console.log('Carteira suspensa!!'); // Suspensão de carteira hihihi
+        }
+        else { // Senão
+            console.log('Pontos: ', pontos);  // Exibindo os Pontos
+        }
+    } // Fechamento do Senão
+}
+
+
+// Par ou Ímpar - Mini-Projeto5
+
+// Regras!!
+
+// 1. Receber uma quantia de valores, e depois os avalie.
+// 2. Função exibe se cada valor é par ou ímpar!!
+
+exibirTipo(5); // Quantos números seram analisados
+
+function exibirTipo(limite) { // Função
+    for (let i = 1; i <= limite; i++) {
+        if ( i % 2 === 0 ) {
+            console.log(i + ' - PAR');
+        }
+        else {
+            console.log(i + ' - ÍMPAR');
+        }
+    }
+}
+
+
+*/ // FINAL DO COMENTÁRIO
