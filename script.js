@@ -496,9 +496,6 @@ for(let cor of cores){ // Faça a variável cor de cores(array)
 }
 
 
-*/ // FINAL DO COMENTÁRIO
-
-
 // Mini-Projeto -- Crie uma função e analíse dois números e retorne o maior.
 
 let valorMaior = max(5,9); // Variável valorMaior da função max(num1 = 5 e num2 = 9)
@@ -514,3 +511,17 @@ function max(num1, num2) { // Função com nome de max (guarda valores de num1 e
 } // Fechamento da função - max
 
 
+// Ou
+
+let idadeCliente = idade(15,18); // Variável que guadará o valor da idade dos cilentes 
+console.log("O cliente mais velho tem " + idadeCliente + " anos."); // Apresente no console
+
+function idade(idade1,idade2) { // Função idade (com valores das idades)
+    return idade1 > idade2 ? idade1: idade2; // Retorne - se idade1 for maior que idade2 - se verdadeiro -- mostre idade1 - se falso -- mostre idade2
+} // Fecchamento da função - idade 
+
+
+*/ // FINAL DO COMENTÁRIO
+
+
+// Salvando - 09.10.2022 - Javascript   
