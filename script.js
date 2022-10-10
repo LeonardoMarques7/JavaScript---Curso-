@@ -329,7 +329,7 @@ let corPerfil = corPersonalizada || corPadrao;
 console.log(corPerfil)
 
 
-// TROCANDO VARIÁVEIS - Invertendo
+// TROCANDO VALORES DAS VARIÁVEIS - Mini-Projeto1
 
 // VALOR INICIAL
 let a = 'Vermelho'; // Variável a é ígual a Vermelho
@@ -590,7 +590,7 @@ function velocidadeVerificada(velocidade) { // Função
 }
 
 
-// Par ou Ímpar - Mini-Projeto5
+// Par ou Ímpar - Mini-Projeto 5
 
 // Regras!!
 
@@ -611,4 +611,330 @@ function exibirTipo(limite) { // Função
 }
 
 
+// Encontre a string - Mini-Projeto6
+
+// Regras
+
+// 1. Crie um método para ler as propriedades de um objeto
+// 2. Depois exiba somente as propriedades do tipo string que estão nesse objeto
+
+const filme = { // Contante / Variável - filme
+    Título : 'WandaVision', // Suas propriedades
+    Ano : '2021',
+    Diretor : 'Matt Shakman',
+    Personagens : 'Wanda e Visão'
+}
+
+exibirPropriedades(filme); // exibirPropriedades terá os valores da const filmes
+
+function exibirPropriedades(obj) { // Função que fará a exibição das propriedades do filme!!
+    for (prop in obj) { // Faça 
+        if (typeof prop === 'string') { // Se o  tipo da variável prop for igual á string.. Faça
+            console.log(prop, obj[prop]) // Apresente as propriedades e os objetos na propriedades!!
+        } // Fechamento do Se
+
+    } // Fechamento do Laço
+
+} // Fechamento da Função!!
+
+
+// Múltiplos de 3 e 5 - Mini-Projeto7
+
+// Regras
+
+// 1. Crie uma função chamada somar quee retorne a soma de todos os múltiplos de 3 e 5
+// 2. Armazene os múltiplos de 3
+// 3. Armazene os múltiplos de 5
+// 4. E depois o Some os dois.. 
+
+// Múltiplos de 3 
+// - 3, 6, 9 
+
+// Múltipllos de 5
+// - 5, 10
+
+
+somar(10); // Somar tem o limite de 10
+function somar(limite) { // Função
+    let multiplosDe3 = 0; // Variáveis
+    let multiplosDe5 = 0;
+
+    for (i = 0; i <= limite; i++) { // Laço de Repetição
+
+        // 3
+        if (i % 3 === 0) { // Se - resto de i for igual á 0
+            multiplosDe3 += i; // Isso é igual a fazermos multiplosDe3 + multiplosDe3 + i;
+        }
+
+        // 5
+        if (i % 5 === 0){ // Se - resto de i for igual á 0
+            multiplosDe5 += i; // Igual ao de cima!
+        }
+
+    }
+    console.log('Soma do Multiplicador de 3 = ' + multiplosDe3);
+    console.log('Soma do Multiplicador de 5 = ' + multiplosDe5);
+    console.log('Somas do Multiplicadores de 3 e 5 =', multiplosDe3 + multiplosDe5);
+}
+
+
+// Média Escolar - Mini-Projeto8
+
+// Regras / Objetivos
+
+// 1. Obtenha a média dos alunos apartir de um Array!!
+// 2. E as retorne no console..
+
+// Notas Possíveis 
+
+// A -> 100-90 <-
+// B -> 89-80  <-
+// C -> 79-70  <-
+// D -> 69-60  <-
+// F -> 59-0   <-
+
+const array = [100, 70, 60, 100] // A | C | D | A
+// Valor da média = 76 ou 76.66
+
+console.log('Sua média é ' +  mediaDoAluno(array)); // Apresentado a média no console
+
+function mediaDoAluno(notas) {
+    // const media = calcularMedia(notas); 
+    
+    let soma = 0;
+    for (let nota of notas) {
+        soma += nota;
+    }
+    const media = soma / (notas.length); // Variável media é igual á soma divídio pelo tamanho do array = 3
+
+    if (media < 59 ) return 'F'; // Retornando valores de suas notas
+    if (media < 69 ) return 'D';
+    if (media < 79 ) return 'C';
+    if (media < 89 ) return 'B';
+    if (media < 101 ) return 'A';
+}
+
+// Ou 
+
+function calcularMedia(array) {
+    let soma = 0;
+    for (let valor of array) {
+        soma += valor;
+    }
+    return soma / (array.length);
+}
+
+
+// Contador de Asteriscos - Mini-Projeto9
+
+// Regras / Objetivos
+
+// 1. Crie uma função que exiba a quantidade de Asteriscos.. Lembrando que podemos fazer isso de duas formas..
+
+exibirAsteriscos(10);
+
+function exibirAsteriscos(linhas) {
+
+    // Forma Simples
+    console.log('Forma Simples..')
+    console.log('')
+    let padraoSimples = '';
+    
+    for (let linha = 1; linha <= linhas; linha++) {
+        padraoSimples += '*';
+        console.log(padraoSimples)
+    }
+
+    // Forma com Loops
+    console.log('')
+    console.log('Forma com Loops..')
+    console.log('')
+    for (let linha = 1; linha <= linhas; linha++) {
+        let padrao = '';
+        for (let i = 0; i < linha; i++) {
+            padrao += '*'; // Enquanto a variável i não chegar a 5.. Ele irá repetir o comando
+        }
+        console.log(padrao) // Exibindo o padrão
+    }
+    
+}
+
+
+// Número Primos - Mini-Projeto10
+
+// Regras / Objetivos
+
+// 1. Crie uma função que mostre os números primos
+
+// Primos - Só pode ser dividido por 1 ou por ele mesmo
+// Compostos - "Normais"
+
+// Exem.: 10, 11 - 10 Seria o Composto e 11 Seria o Primo
+
+exibirNumPrimos(11); // Exibindo os num primos com o limite de 15
+
+function exibirNumPrimos(limite) { // Função
+    for (let numero = 2; numero <= limite; numero++) { // Loop com a variável numero 
+        
+
+        if (NumberPrimo(numero)) console.log(numero); // Chamando a função e colocando o parâmetro
+    } 
+} 
+
+function NumberPrimo(numero) {
+    for (let divisor = 2; divisor < numero; divisor++) { // loop com a variável divisor
+        if (numero % divisor === 0) { // Se esse se, for verdadeiro.. Não será um número primo!!
+            return false;
+        }
+    } 
+    return true
+}
+
+
+// Factory Functions - Função de Fábrica
+
+function criarCelular(Marca, Tela ,Bateria) {
+    return {
+        Marca,
+        Tela,
+        Bateria,
+        ligar() {
+            console.log('Chamando...');
+        }
+    }
+}
+
+const celular1 = criarCelular('Morola', 6.5, 5000);
+console.log(celular1)
+
+
+// Cronstructor Functions - Construtor de Função
+
+// camelCase umDoisTresQuatro
+function criarNotebook (MarcaNote, Processador, MemoriaRamNote, Armazenamento) {
+    return {
+        MarcaNote, 
+        Processador, 
+        MemoriaRamNote, 
+        Armazenamento
+    }
+}
+
+// Pascal Case - UmDoisTresQuatro
+function Notebook (MarcaNote, Processador, MemoriaRamNote, Armazenamento) {
+    this.MarcaNote = MarcaNote, // this ele faz a referência ao obj.. Nesse caso faz referência a marca do Notebook.
+    this.Processador = Processador,
+    this.MemoriaRamNote = MemoriaRamNote,
+    this.Armazenamento = Armazenamento
+}
+
+const notebook = new Notebook('Lenovo','i3-7020U','12GB','1Tb');
+console.log(notebook);
+
+
+// Natureza Dinâmica de Objetos
+// Javascript é uma linguagem altamente dinâmica..
+
+const teclado = { // Constante teclado
+    cor : 'Black',
+    marca: 'Multilaser'
+}
+
+teclado.tempoDeResposta = '1ms'
+
+delete teclado.tempoDeResposta; // Deletando tempoDeResposta
+console.log(teclado)
+
+
+// Clonagem de Objetos
+
+// Usarei como exemplo uma caixa
+const caixa = { // Objeto que queremos clonar
+    CorDaCaixa : 'Amarela',
+    TamanhoDaCaixa : '1.5M',
+    FeitaDe : 'Papelão'
+}
+
+// Forma que podemos clonar
+const novoObjeto = Object.assign({
+    PesoDaCaixa : '450g'
+}, caixa); // Com o uso desse Object.assign também podemos adicionar novas 'características'..
+console.log(novoObjeto);
+
+// Outra maneira 
+const Objeto2 = {...caixa};
+console.log(Objeto2)
+
+
+// Math -  Biblioteca de Matemática
+
+// ATETTION - Se quiser se aprofundar sobre a biblioteca, basta pesquisar no seu navegador.. Math Javascript
+
+// Vamos testar alguns, prepare seu F5.
+
+console.log(Math.random()); // Math.ramdom server para gerar número aleatórios
+
+console.log(Math.max(9,24,13,20)); // Math.max serve para apresentar o maior valor, dentro do arranjo de valores que está entre os ()...
+
+console.log(Math.min(9,24,13,20)); // Math.min ele vai identificar o menor valor, dentro do arranjo de valores que estão entre os ()...
+
+// !!
+// Please - PESQUISE NO SEU NAVEGADOR SOBRE A BIBLIOTECA MATH DO JS
+// !!
+
+
+// String - Tipos / Primitivo / Objeto /
+
+// Tipo primitivo 
+const textoPrimitivo = 'Hello World e seu tipo é'
+console.log(textoPrimitivo, typeof textoPrimitivo)
+
+// Tipo objeto 
+const textoObjeto = new String('Hello World', typeof textoPrimitivo);
+// O diferencial é que a do tipo Objeto, terá seu tipo como objeto e também terá propriedades de um objeto
+console.log(textoObjeto)
+
+// !!
+// Please novamente - PESQUISE NO SEU NAVEGADOR SOBRE OS STRINGS NO JS
+// !!
+
+
+// Template Literal - escape sequences
+const mensagemLiteN = 'Humano: Ollaaaa Mundddo\nMundo: Oiieee'; // O /n podemos usar para dar espaçamento entre as linhas
+
+// Object {}
+// Boolean - True ou False
+// String - '' ou ""
+// Template - ` `
+
+const outraResposta = 'Olllaaa o caraio';
+const menasgemLiteTem = `Humano: Ollaaaa Mundddo
+Mundo: ${outraResposta}`; // Trocando resposta usando o ${Mensagem que vc deseja trocar}
+
+console.log(mensagemLiteN); // Exibindo mensagem com \n
+console.log(menasgemLiteTem); // Exibindo mensagem com ` `
+
+// !!
+// Sobre o escape.. Vc pode pesquisar no seu navegador 'javascript escape sequences'  
+// !!
+
+
 */ // FINAL DO COMENTÁRIO
+
+
+// Date / Datas / Pesquise no seu navegador sobre o Date no Js...
+
+const data1 = new Date();
+const data2 = new Date('October 11 2022 18:40');
+const data3 = new Date(2025,03,09,10,30);
+
+data1.setFullYear(1967);
+
+console.log(`
+Data 1: ${data1} 
+Data 2: ${data2} 
+Data 3: ${data3}`);
+
+alert('Salllvee')
+
+// Terminando por hj 10.10.2022 - 18:37
