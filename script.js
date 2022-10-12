@@ -919,14 +919,11 @@ console.log(menasgemLiteTem); // Exibindo mensagem com ` `
 // !!
 
 
-*/ // FINAL DO COMENTÁRIO
-
-
 // Date / Datas / Pesquise no seu navegador sobre o Date no Js...
 
-const data1 = new Date();
-const data2 = new Date('October 11 2022 18:40');
-const data3 = new Date(2025,03,09,10,30);
+const data1 = new Date(); 
+const data2 = new Date('October 11 2022 18:40'); 
+const data3 = new Date(2025,03,09,10,30); // Ele converterá para uma data no console
 
 data1.setFullYear(1967);
 
@@ -934,7 +931,247 @@ console.log(`
 Data 1: ${data1} 
 Data 2: ${data2} 
 Data 3: ${data3}`);
-
-alert('Salllvee')
-
+                                                                                                            
 // Terminando por hj 10.10.2022 - 18:37
+
+
+// Montador de Endereço - Mini-Projeto11
+
+// Regras / Objetivos
+
+// Nesse projeto faremos a montagem de um endereço - Contendo:
+// Rua
+// Cidade
+// CEP
+// Função exibirEndereco(endereco)
+
+let endereco = {
+    Rua: 'Salvador Milego',
+    Cidade: 'Sorocity',
+    Cep: '66666-666'
+};
+
+function exibirEndereco(endereco) {
+    for (let chave in endereco) {
+        console.log(chave,endereco[chave]);
+    }
+}
+
+exibirEndereco(endereco);
+
+
+// Encontre a igualdade - Mini-Projeto12
+
+// Regas / Objetivos
+
+// Comparardois objetos e depois encontrar a igualdade entre eles
+
+function Local(rua,cidade,cep) { // Função Local
+    this.rua = rua,
+    this.cidadde = cidade,
+    this.cep = cep
+};
+
+const local1 = new Local('Hermelino Matarrazzo','Sorocity','22222-222'); // Valores de Local1
+const local2 = new Local('Don Juan','Fortaleza','11111-111'); // Valores de Local2
+const local3 = new Local('Don Juan','Fortaleza','11111-111'); // Valores de Local3
+
+function saoIguais(local1,local2,local3) {
+    // Vamos comparar se as propriedades deles são iguais!!
+    return local1.rua === local2.rua && // Retornando valores para a comparcação
+    local1.cidadde === local2.cidade &&
+    local1.cep === local2.cep &&
+    local2.cidade === local3.cidade 
+};
+
+console.log(saoIguais(local1,local2,local3)); // Apresentando no console se os valores são iguais!
+
+function temLocalMemoriaIguais(local2,local3) { // Função 
+    // Vamos comparar se a referência ddo objeto aponta para o mesmo local na memória
+    return local2 === local3; // Retornando valor para a memória
+}
+
+console.log(temLocalMemoriaIguais(local2,local3)); // Apresentando no console
+
+
+// Montador de Postagem de Blog - Mini-Projeto13
+
+// Crie um objeto de postagem de blog que vai conter as seguintes propriedades --
+
+// - Título
+// - Mensagem
+// - Autor
+// - Visualizações
+// - Comentários
+// -    (autor,mensagem)
+// - Se ele está ao vivo!!
+
+let postagem = { // Objeto postagem e suas propriedades
+    Título: 'Meu cachorro disse a primeira palavra',
+    Mensagem: 'Estou impressionada e assutada!!!',
+    Autor: 'Adicellia Alberalda',
+    Visualizacoes: '12.500Mil',
+    comentarios : [ // Comentários
+        { Autor: 'Deriarti Ecivones',Mensagem: '#FakeNews'}, // Autores do comentário e suas Mensagens!
+        { Autor: 'Deriarti Ecivones',Mensagem: '##'} 
+    ],
+    estaAoVivo : true
+}
+
+console.log(postagem); // Exibindo postagem
+
+
+// Constructor Function - Exercicío
+// Criar o objeto postagem novamente e consulte as suas propriedades
+
+// Com uma Função de Construtor - Contendo..
+
+// - Título
+// - Mensagem
+// - Autor
+// - Visualizações
+// - Comentários
+// -    (autor,mensagem)
+// - Se ele está ao vivo!!
+
+function Postagem2(titulo,mensagem,autor) { // Função 
+    this.titulo= titulo, // Referências
+    this.mensagem = mensagem,
+    this.autor = autor,
+    this.visualizacoes = 24.000,
+    this.estaAoVivo2 = false
+
+}
+
+let postagem2 = new Postagem2('Ola', 'Mundo', 'Program'); // Criando o Objeto
+console.log(postagem2);
+
+
+// Faixa de Preço - Mini-Projeto14
+
+// Para Criar a faixa de Preço necessitaremos de um array com objetos para a faixa, 
+// e como exemplo podemos usar o site do mercado livre!!
+
+// Primeira Opc 
+let faixas = [ // Array dos valores da faixa
+    {tooltip: 'Até R$100', mínimo: 0, máximo: 100},
+    {tooltip: 'de R$100 a R$1.000', mínimo: 100, máximo: 1000},
+    {tooltip: 'de R$1.000 ou mais', mínimo: 1000, máximo: 99999999999}
+];
+
+// Segunda Opc (Factory Function)
+function CriaFaixaPreco(tooltip,minímo,máximo) { // Função
+    return { // Retornando valores
+        tooltip,
+        minímo,
+        máximo
+    }
+}
+
+let faixas2 = [ // Array dos valores da faixa
+    CriaFaixaPreco('Até R$100',1,100),
+    CriaFaixaPreco('de R$100 a R$1.000',100,1000),
+    CriaFaixaPreco('de R$1.000 ou mais',1,1000000)
+];
+
+// Terceira Opc (Constructor Function)
+ 
+function FaixaPreco(tooltip,mínimo,máximo) { // Função
+    this.tooltip = tooltip,
+    this.mínimo = mínimo,
+    this.máximo = máximo
+}
+
+let faixas3 = [ // Array dos valores da faixa
+    new FaixaPreco('Até R$100',1,100),
+    new FaixaPreco('de R$100 a R$1.000',100,1000),
+    new FaixaPreco('de R$1.000 ou mais',1,1000000)
+]
+
+console.log(faixas); // Primeira Opc
+console.log(faixas2); // Segunda Opc
+console.log(faixas3); // Terceira Opc
+
+
+// Introdução do Array
+
+const numbers = [1,'2',3,3]; // Array 
+console.log('Array original ' + numbers); 
+
+// Início - Adicionando valor  
+numbers.unshift(0); 
+console.log(numbers);
+
+// Meio - Adicionando valor 
+numbers.splice(2,1,2); // Apagamos o '' e colocamos o 2.
+console.log(numbers);
+
+// Fim - Adicionando valor 
+numbers.push(4);
+console.log(numbers);
+
+// Encontrando Elementos do tipo Primitivo no Array!!
+console.log('Posição do número 2:', numbers.indexOf(2));
+
+// Encontrando qual foi a posição do ultímo valor que digitei.. Exem.: 2
+console.log('Qual é a posição do número repetido:', numbers.lastIndexOf(3));
+
+// Eh verdade que esse número está no meu Array?
+console.log('Temos o nº 3? R:', numbers.includes(3)); // True
+console.log('Temos o nº 7? R:', numbers.includes(7)); // False
+
+// Encontrando Elementos do tipo de referência no Array!!
+
+const celular = [
+    S22 = {Marca: 'Samsung', Modelo: 'S22', Ano: '2022'},
+    S23 = {Marca: 'Samsung', Modelo: 'S23', Ano: '2023'},
+];
+
+console.log(S22, S23); 
+
+celular.forEach(function(celular) { // Foreach
+    console.log(celular)
+});
+
+// Agora vamos apagar o Array 
+
+// Solução 1
+ celular = [];
+ console.log(celular);
+
+// Solução 2
+celular.length = 0; 
+ console.log(celular);
+
+// Solução 3
+ celular.splice(0,celular.length);
+ console.log(celular);
+
+// Solução 4
+ while (celular.length > 0);
+ celular.pop();
+ console.log(celular);
+
+
+
+// Combinando e Dividindo Arrays
+
+const Anos1= [2019,2020];
+const Anos2 = [2021,2022];
+
+// Combinar
+const CombinandoAnos = Anos1.concat(Anos2); 
+console.log();
+
+// Dividir
+const DividindoAnos = CombinandoAnos.slice(0, 2); // Referênciando ao valor de 2019 e 2020
+console.log(DividindoAnos);
+
+const DividindoAnos2 = CombinandoAnos.slice(2, 4); // Referênciando ao valor de 2021 e 2022
+console.log(DividindoAnos2);
+
+*/ // FINAL DO COMENTÁRIO
+
+// FINALIZANDO CURSO - 11.10.2022 - Curso de 4 Horas, sobre o JavaScript
+
+
